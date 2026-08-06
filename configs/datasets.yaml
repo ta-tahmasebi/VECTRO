@@ -1,0 +1,47 @@
+datasets:
+  tapas:
+    reader: fcd
+    source: ../data/raw/tapas_cologne/tapas_6to8_fcd.xml
+    cache: ../data/processed/tapas.parquet
+    coordinates: geographic
+
+  tapas_live:
+    reader: sumo
+    source: ../data/raw/tapas_cologne/TAPASCologne-0.32.0/cologne6to8.sumocfg
+    network_file: ../data/raw/tapas_cologne/TAPASCologne-0.32.0/cologne.net.xml
+    gui: false
+
+  intas:
+    reader: fcd
+    source: ../data/raw/intas/intas_sample_fcd.xml
+    cache: ../data/processed/intas.parquet
+    coordinates: geographic
+
+  intas_live:
+    reader: sumo
+    source: ../data/raw/intas/scenario/InTAS_buildings.sumocfg
+    network_file: ../data/raw/intas/scenario/ingolstadt.net.xml
+    gui: false
+    sumo_args: ["--no-step-log", "true"]
+
+  tdrive:
+    reader: raw_gps
+    source: ../data/raw/tdrive
+    cache: ../data/processed/tdrive.parquet
+    format: tdrive
+    glob: "**/*.txt"
+    chunk_size: 250000
+
+  roma:
+    reader: raw_gps
+    source: ../data/raw/roma_taxi/taxi_february.tar.gz
+    cache: ../data/processed/roma.parquet
+    format: roma
+    chunk_size: 250000
+
+  geolife:
+    reader: raw_gps
+    source: ../data/raw/geolife
+    cache: ../data/processed/geolife.parquet
+    format: geolife
+    glob: "**/*.plt"

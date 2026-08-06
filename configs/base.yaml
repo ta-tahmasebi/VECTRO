@@ -1,0 +1,29 @@
+placement:
+  server_count: 9
+  placement: density
+  resource_profiles: [eco, balanced, accelerated]
+  capacity_scale: 1.0
+  coverage_overlap: 1.10
+  coverage_percentile: 95.0
+  uplink_mbps: 100.0
+  downlink_mbps: 200.0
+  seed: 42
+
+training:
+  seed: 42
+  markov_grid_size: 24
+  gru:
+    hidden_size: 64
+    sequence_length: 16
+    epochs: 12
+    batch_size: 128
+    learning_rate: 0.001
+
+evaluation:
+  arrival_rate_per_vehicle_minute: 0.5
+  execution_durations_s: [10.0, 30.0]
+  reference_capacity_gcycles_s: 10.0
+  input_mb: 2.0
+  output_mb: 0.2
+  deadline_factor: 2.0
+  seed: 42
