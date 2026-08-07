@@ -50,6 +50,7 @@ class OffloadingAgent(ABC):
         *,
         progress: TrainingProgress | None = None,
     ) -> TrainingSummary:
+        pass
 
     @abstractmethod
     def predict(
@@ -57,9 +58,11 @@ class OffloadingAgent(ABC):
         state: VehicleState,
         task_duration_s: float,
     ) -> str:
+        pass
 
     @abstractmethod
     def load(self) -> None:
+        pass
 
     @property
     def is_ready(self) -> bool:

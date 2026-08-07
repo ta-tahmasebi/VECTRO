@@ -17,7 +17,7 @@ output/
 saved_models/
 saved_models_heavy/
 configs/environments/
-
+data.zip
 data/processed/*
 !data/processed/.gitkeep
 *.metadata.json

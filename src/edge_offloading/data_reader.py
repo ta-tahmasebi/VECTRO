@@ -42,6 +42,7 @@ class MobilityReader(ABC):
         max_steps: int | None = None,
         progress: ProgressCallback | None = None,
     ) -> Iterator[MobilitySnapshot]:
+        pass
 
     @abstractmethod
     def read_all(
@@ -49,6 +50,7 @@ class MobilityReader(ABC):
         *,
         progress: ProgressCallback | None = None,
     ) -> pd.DataFrame:
+        pass
 
 
 class FCDReader(MobilityReader):
